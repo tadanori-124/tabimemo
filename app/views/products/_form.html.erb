@@ -1,0 +1,36 @@
+<%= form_with model: @product do |form| %>
+  <div class="form_area">
+    <div class="form_area_title">
+    <%= form.label :title, 'タイトル(5文字以上):' %>
+    <%= form.text_field :title, size: "30x3" %>
+    </div>
+    <div class="form_area_name">
+    <%= form.label :hotel_name, '宿泊地:' %>
+    <%= form.text_field :hotel_name, size: "40x3" %>
+    </div>
+    <div class="form_area_image">
+    <%= form.label :new_image, '画像選択' %>
+    <%= form.file_field :new_image %>
+    </div>
+    <div class="form_area_comment">
+      <%= form.label :contents, '感想', class:"comment_title" %>
+      <%= form.text_area :contents, size: "50x6" %>
+    </div>
+    <% if @product.errors.any? %>
+      <%= @product.errors.messages[:title][0] %>
+    <% end %>
+    <div class="form_area_btn">
+      <%= form.submit '画像を投稿する', class:"btn_post" %>
+    </div>
+  </div>
+<% end %>
+
+<footer class="footerArea">
+    <ul>
+      <li><%= link_to "ホーム", root_path, class:"footerLink" %></li>
+      <li><%= link_to "新規投稿する", new_product_path, class:"footerLink" %></li>
+    </ul>
+    <small>&copy; 2023 Tabimemo</small>
+  </footer>
+</body>
+</html>

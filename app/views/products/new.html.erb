@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="お気に入りのホテルをメモしよう">
+  <title>tabimemo</title>
+  <link rel="icon" href="../../assets/images/jewel_2.png">
+  <link rel="stylesheets" href="../../assets/stylesheets/reset.css">
+  <link rel="stylesheets" href="../../assets/stylesheets/main.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <%= link_to root_path do %>
+        <%= image_tag 'jewel_2.png', alt: 'logo', width: '70px', height: '70px' %>
+      <% end %>
+    </div>
+    <div class="header-item">
+      <ul class="menu">
+        <li class="menu-item"><%= link_to "Home", root_path %></li>
+      </ul>
+    </div>
+  </header>
+
+<%= render partial: 'form' %>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="お気に入りのホテルをメモしよう">
+  <title>tabimemo</title>
+  <link rel="icon" href="../../assets/images/jewel_2.png">
+  <link rel="stylesheets" href="../../assets/stylesheets/reset.css">
+  <link rel="stylesheets" href="../../assets/stylesheets/main.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <%= link_to root_path do %>
+        <%= image_tag 'jewel_2.png', alt: 'logo', width: '70px', height: '70px' %>
+      <% end %>
+    </div>
+    <div class="header-item">
+      <ul class="menu">
+        <li class="menu-item"><%= link_to "Home", root_path %></li>
+      </ul>
+    </div>
+  </header>
+  <div class="top-image">
+    <%= image_tag 'bintan.jpg', alt: 'main', width: '80%', height: '200px' %>
+  </div>
+  <div class="postButton"><%= link_to '新規投稿する', new_product_path, class:"post-btn-link" %></div>
+  <div class="wrapper">
+    <ul class="contentArea">
+      <% @products.each do |product| %>
+        <li class="contents">
+          <div>
+            <%= image_tag product.new_image.url, class:"contentImage", width: '300px', height: '300px' %>
+          </div>
+          <div class="contentsDetail">
+            <%= check_box_tag '', '' %>
+            <%= product.title %>
+            <%= link_to '[編集]', edit_product_path(product) %>
+            <%= link_to '[削除]', product_path(product),
+            data: { turbo_method: 'delete', turbo_confirm: '削除してもよろしいですか？' } %><br>
+            <div class="hotel_name">宿泊地：<%= product.hotel_name %></div>
+            <p class="hotel_text"><%= product.contents %></p>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <footer class="footerArea">
+    <ul>
+      <li><%= link_to "ホーム", root_path, class:"footerLink" %></li>
+      <li><%= link_to "新規投稿する", new_product_path, class:"footerLink" %></li>
+    </ul>
+    <small>&copy; 2023 Tabimemo</small>
+  </footer>
+</body>
+</html>
