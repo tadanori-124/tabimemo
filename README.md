@@ -1,24 +1,21 @@
-# README
+## このwebアプリケーションはなぜ作成されましたか（why）
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on railsのフレームワークを用いて、0からの開発〜本番リリースまでの手順を理解するために作成されました。
 
-Things you may want to cover:
 
-* Ruby version
+## このwebアプリケーションは何ができますか（what）
 
-* System dependencies
+・ユーザがテキストと画像を投稿することができます。
+・他者が投稿したテキストと画像を閲覧することができます。
 
-* Configuration
 
-* Database creation
+## どのように使用しますか（how）
 
-* Database initialization
+*ここにURLを挿入する*
 
-* How to run the test suite
+## 使用した技術スタック、サービス
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+OS: MacOS Monterey バージョン12.5
+プログラミング言語: Ruby, Javascript
+フレームワーク: Ruby on rails(7.0.7.2)
+利用サービス: AWS(Cloud9, EC2, Route53), SQLLite, VScode, Git, Github, Figma 
